@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Formulario } from './Formulario'
+import { GridGalery } from './GridGalery'
+import { handleRecogerCategoria } from './Formulario'
 
 export const Galeria = () => {
-  return (
-    <div>Galeria</div>
-  )
+
+    const[categoria, setCategoria] = useState([])
+
+    return (
+    <>
+        <Formulario categoria = {handleRecogerCategoria}/>
+        <GridGalery/>
+    </>
+    )
 }
