@@ -1,15 +1,17 @@
-import React from 'react'
+// Pasarle los "argumentos" desde el padre (Galeria), sino no los reconoce el padre
+export const Formulario = ({ categoriasActualizadas }) => {
 
-export const Formulario = () => {
-   // const [valor, setValor] = useState("")
+    // Recoge el valor del input buscador
     const handleRecogerCategoria = (ev) => {
         ev.preventDefault()
+
         // para capturar la categoria hay que poner el name del input.value
         let categoria = ev.target.categoria.value;
-        console.log(categoria)
-        return categoria
-        
-    }
+        //console.log(categoria)
+
+        categoriasActualizadas(categoria);
+    };
+
     return (
         <>
             <p> Buscador de imágenes</p>
