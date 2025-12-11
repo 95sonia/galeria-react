@@ -1,6 +1,7 @@
 // Pasarle los "argumentos" desde el padre (Galeria), sino no los reconoce el padre
 export const Formulario = ({ categoriasActualizadas }) => {
 
+
     // Recoge el valor del input buscador
     const handleRecogerCategoria = (ev) => {
         ev.preventDefault()

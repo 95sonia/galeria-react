@@ -19,9 +19,9 @@ export const GridGalery = () => {
 
       {fotos.map((foto) => (
         <Card
-          img={img}
-          descripcion={descripcion}
-          url={url}
+          img={foto.img}
+          descripcion={foto.descripcion}
+          url={foto.url}
         />
       ))}
 
