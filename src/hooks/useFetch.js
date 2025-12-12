@@ -1,11 +1,11 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
 const URL_BASE = `https://api.pexels.com/v1/`;
-const per_page = 20;
+const per_page = 10;
 
 
-const llamarApi = async (categoria) => {
+const llamarApi = async (categoria, per_page) => {
     try {
-        const respuesta = await fetch(`${URL_BASE}search?query=${categoria}&per_page=${per_page}&page=3`, {
+        const respuesta = await fetch(`${URL_BASE}search?query=${categoria}&per_page=${per_page}&page=${page}`, {
             headers: {
                 Authorization: `${API_KEY}`
             }
@@ -14,15 +14,14 @@ const llamarApi = async (categoria) => {
         console.log(respuesta)
         if (respuesta.ok) {
             const datos = await respuesta.json();
-            console.log(datos);
+            //console.log(datos);
             return datos;   
         } else {
             throw "Oh, oh, error"
         }
+
     } catch (error) {
         //console.log(error)
         throw (error + "Pendiente de gestionar error")
     }
 }
-
-
