@@ -1,14 +1,15 @@
-import fotoPrueba from '../assets/viajes-1.jpg'
+
 import './Card.css'
 
-export const Card = ({ img, alt, url }) => {
+export const Card = ({ alt, src, photographer, url }) => {
   return (
     <>
       <article className='card'>
         <div>
-          <img src={img} alt={alt} />
+          <img src={src} alt={alt} />
         </div>
         <p>{alt}</p>
+        <p>Fotógrafo: {photographer}</p>
         <a href={url}>Enlace de fotografía</a>
       </article>
     </>

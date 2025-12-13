@@ -1,37 +1,49 @@
+import { useState } from 'react';
 import { Formulario } from './Formulario'
 import { GridGalery } from './GridGalery'
-import React, { useState } from 'react';
 
 
 export const Galeria = () => {
 
-    const categorias = ['naturaleza', 'animales', 'casa'];
+    //const categoriasPruebas = ['naturaleza', 'animales', 'casa'];
 
     // Hacemos que el valor inicial sea un array vacío
-    const [categoria, setCategoria] = useState([]);
+    const [categoriasArray, setCategoriasArray] = useState([]);
 
-    // Reemplazar el estado de la propiedad categoría (añadir al array)
-    const handlecambiarCategorias = (categoriaNueva) => {
-        //1º comprobar si existe la palabra buscada, poner en minuscula etc
+    // Reemplazar el estado del array con las categorías del Formulario
+    const categoriaNueva = (categoria) => {
+        //console.log(categoria, 'valor recibido en Galería') // Para comprobar que se está recibiendo desde Formulario
+        
+        // Perfilar palabras para después filtrar
+        const categoriaRefinada = categoria.trim().toLowerCase();
+        console.log(categoriaRefinada);
+        
+        // Comprobar si existe la palabra buscada, si existe no actualizar el array / si no existe añadirla al array
+        if (categoriasArray.includes(categoriaRefinada)) {
+            
+            return categoriasArray;
 
-
-        //para actualizar el esatado de categoria
-        setCategoria([
-            ...categoria,
-            categoriaNueva
-        ])
-        //console.log(categoria)
+        } else {
+            //para actualizar el esatado de categoria
+            setCategoriasArray([
+                ...categoriasArray,
+                categoriaRefinada
+            ]);
+        }
+        console.log(categoriasArray);
     }
 
     return (
         <>
             {/*Le pasamos la función que actualiza el estado de la categoría */}
-            <Formulario categoriasActualizadas={handlecambiarCategorias} />
+            <Formulario categoriaNueva={categoriaNueva} />
 
-            {categorias.map((palabra) => (
+            {/* Recorrer el array para después poder pintar las fotos en las Cards*/}
+            {categoriasArray.map((categoriaArray) => (
         
                 <GridGalery 
-                 categoria={palabra}
+                    key={categoriaArray}
+                    categoria={categoriaArray}
                 />
             ))}
         </>

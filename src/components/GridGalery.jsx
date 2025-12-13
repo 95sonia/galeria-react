@@ -1,36 +1,38 @@
 import './GridGalery.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from './Card';
 import { Paginacion } from './Paginacion';
+import { useLlamarApi } from '../hooks/useLlamarApi';
+
 
 export const GridGalery = ({ categoria }) => {
-  // Simulación datos
-  const fotos = [
-    { id: 1, categoria: "playa", url: "#", img: "playa.jpg", alt: "Foto de la playa" },
-    { id: 2, categoria: "montaña", url: "#", img: "montaña.jpg", alt: "Foto de la montaña" },
-    { id: 3, categoria: "ciudad", url: "#", img: "ciudad.jpg", alt: "Foto de la ciudad" },
-    { id: 4, categoria: "playa", url: "#", img: "playa2.jpg", alt: "Otra playa" },
-  ];
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("playa");
+  // "Requerir" lo que nos interesa del Hook
+  const { cargando, fotos } = useLlamarApi(categoria);
 
   return (
 
     <>
-
+      {/* Pendiente hacer animación*/}
       <div className='flexCointainer'>
         <h2>{categoria}</h2>
+        {
+          cargando
+            ? <p>Cargando</p> :
+            fotos.map((foto) => (
+              <Card
+                key={foto.id}
+                alt={foto.alt}
+                photographer={foto.photographer}
+                src={foto.src.medium}
+                url={foto.url}
+              />
+            ))  
 
-        {fotos.map((foto) => (
-          <Card
-            key={foto.id}
-            img={foto.img}
-            alt={foto.alt}
-            url={foto.url}
-          />
-        ))}
+        }
 
       </div>
+
       <Paginacion />
     </>
   )
