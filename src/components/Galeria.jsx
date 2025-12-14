@@ -9,49 +9,40 @@ import { GridGalery } from './GridGalery';
  */
 
 export const Galeria = () => {
-
-    //const categoriasPruebas = ['naturaleza', 'animales', 'casa'];
-
-    // Hacemos que el valor inicial sea un array vacío
     const [categoriasArray, setCategoriasArray] = useState([]);
+    const [error, setError] = useState(null); // Objeto con errores por categoría
 
-    // Reemplazar el estado del array con las categorías del Formulario
     const categoriaNueva = (categoria) => {
-        //console.log(categoria, 'valor recibido en Galería') // Para comprobar que se está recibiendo desde Formulario
-        
-        // Perfilar palabras para después filtrar
         const categoriaRefinada = categoria.trim().toLowerCase();
-        //console.log(categoriaRefinada);
-        
-        // Comprobar si existe la palabra buscada, si existe no actualizar el array / si no existe añadirla al array
+
+        // Si está vacía, no hacemos nada
+        if (categoriaRefinada === '') return
+
+        // Si la categoría ya existe, mostramos error
         if (categoriasArray.includes(categoriaRefinada)) {
-            
-            return categoriasArray;
-
-        } else {
-            //para actualizar el esatado de categoria
-            setCategoriasArray([
-                ...categoriasArray,
-                categoriaRefinada
-            ]);
+            setError('La categoría ya se ha buscado')
+            return
         }
-        //console.log(categoriasArray);
-    }
 
+        // Añadimos la nueva categoría
+        setCategoriasArray(prev => [...prev, categoriaRefinada])
+
+        // Limpiamos error
+        setError(null)
+    }
     return (
         <>
-            {/*Le pasamos la función que actualiza el estado de la categoría */}
             <Formulario categoriaNueva={categoriaNueva} />
 
-            {/* Recorrer el array para después poder pintar las fotos en las Cards*/}
+            {error && <p className="error">{error}</p>}
+
             {categoriasArray.map((categoriaArray) => (
-        
-                <GridGalery 
+                <GridGalery
                     key={categoriaArray}
                     categoria={categoriaArray}
+                    //error={errores[categoriaArray]} // Pasamos el error a GridGalery
                 />
             ))}
         </>
-    )
-}
-
+    );
+};

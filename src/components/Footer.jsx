@@ -6,7 +6,7 @@ import './Footer.css'
  */
 export const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
             <>
                 <p>&copy; 2025 Galería con React </p>
             </>

@@ -44,6 +44,8 @@ src/
         Header.jsx
         Paginacion.css
         Paginacion.jsx
+        Errores.jsx
+        Errores.css
     hooks/
         useFetch.js
         useFormulario.js

@@ -1,10 +1,10 @@
-
 import './Paginacion.css'
+import PropTypes from 'prop-types';
+
 /**
  * Componente paginación
  * @returns paginación
- */
-
+*/
 export const Paginacion = ({ paginaActual, next_page, prev_page, cambiarPagina }) => {
 
   // Si estamos en la última pag, la  URL de siguiente página es null (Pexels devuelve null si no hay mas resultados)
@@ -34,7 +34,13 @@ export const Paginacion = ({ paginaActual, next_page, prev_page, cambiarPagina }
       <button className='btnpaginas' onClick={handleSiguiente}
         // Deshabilitado si es última página (next_page es null)
         disabled={esUltimaPagina}> Siguiente </button>
-
     </div>
   )
 }
+
+Paginacion.defaultProps = {
+  paginaActual: PropTypes.number,
+  next_page: PropTypes.number,
+  prev_page: PropTypes.number,
+};
+

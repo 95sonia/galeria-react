@@ -1,6 +1,59 @@
 /*ESTILOS LOCALES PARA LAS CARDS*/
 
 .card {
-    background-color: rgb(225, 225, 225);
-    border-radius: 20px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card div { /* div contenedor de la imagen */
+    width: 100%; 
+    height: 250px; 
+    overflow: hidden; /* Por si imagen es más grande que el div */
+}
+
+
+.cardInfo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(116, 22, 48);
+}
+
+.cardFotografo {
+    font-size: 1rem;
+}
+
+.cardEnlace {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black
+}
+
+.cardEnlace:hover {
+    color: rgb(116, 22, 48);
+}
+
+@media (min-width: 700px) { /*para pantallas de 700 px en adelante*/
+    .card {
+        /* Calcula el 50% menos el espacio del gap (20px) */
+        width: calc(50% - 10px); 
+    }
+
+    .card div {
+        height: 200px;
+    }
 }

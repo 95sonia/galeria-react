@@ -1,6 +1,7 @@
 import './Formulario.css'
 import PropTypes from 'prop-types';
 import { useFormulario } from '../hooks/useFormulario'
+
 // único objetivo del formulario: capturar el valor del input, la categoría
 /**
  * Componente Formulario
@@ -15,11 +16,13 @@ export const Formulario = ({ categoriaNueva }) => {
 
     return (
         <>
-            <p> Buscador de imágenes</p>
-            <form id="formularioBuscador" onSubmit={handleRecogerCategoria}>
+        <section>
+            <p className='tituloBuscador'> Buscador de imágenes</p>
+            <form className="formularioBuscador flexContainer" onSubmit={handleRecogerCategoria}>
                 <input type="text" id="categoria" name="categoria" required placeholder="Escribe una categoría" />
                 <button type="submit" id="botonBuscar">Buscar </button>
             </form>
+        </section>
         </>
 
     )

@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <Header />
+      <main>
       <Galeria />
+      </main>
       <Footer />
     </>
   )

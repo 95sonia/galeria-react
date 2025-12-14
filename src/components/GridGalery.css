@@ -1,5 +1,11 @@
-.flexContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+
+.cardContainer {
+
+    justify-content: center;
+    gap: 10px; /*espacio vertical entre filas */
+    padding: 20px;
+    width: 95%;
+    max-width: 1200px; /* Limita el ancho del contenedor */
+    margin: 0 auto;
+
 }

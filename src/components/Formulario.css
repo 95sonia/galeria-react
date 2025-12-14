@@ -1,0 +1,48 @@
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.tituloBuscador {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0 10px;
+}
+
+.formularioBuscador {
+    flex-direction: row; 
+    border-radius: 8px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 90%;
+    margin-left: auto; /* centrar */
+    margin-right: auto;
+    justify-content: center;
+}
+
+
+.formularioBuscador input[type="text"] {
+    padding: 10px;
+    width: 45%;
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: 1.2rem;
+}
+
+.formularioBuscador button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.formularioBuscador button:hover {
+    background-color: rgb(116, 22, 48);
+    color: white;
+}
