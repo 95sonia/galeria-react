@@ -1,13 +1,9 @@
-<<<<<<< HEAD
+
 import './Paginacion.css'
 /**
  * Componente paginación
  * @returns paginación
  */
-export const Paginacion = () => {
-=======
-import React from 'react';
-import './Paginacion.css';
 
 export const Paginacion = ({ paginaActual, next_page, prev_page, cambiarPagina }) => {
 
@@ -27,7 +23,6 @@ export const Paginacion = ({ paginaActual, next_page, prev_page, cambiarPagina }
     }
   };
 
->>>>>>> paginacion
   return (
     <div className='contenedorPagiancion' >
       <button className='btnpaginas' onClick={handleAnterior}
