@@ -16,7 +16,7 @@ export const Galeria = () => {
         
         // Perfilar palabras para después filtrar
         const categoriaRefinada = categoria.trim().toLowerCase();
-        console.log(categoriaRefinada);
+        //console.log(categoriaRefinada);
         
         // Comprobar si existe la palabra buscada, si existe no actualizar el array / si no existe añadirla al array
         if (categoriasArray.includes(categoriaRefinada)) {
@@ -30,7 +30,7 @@ export const Galeria = () => {
                 categoriaRefinada
             ]);
         }
-        console.log(categoriasArray);
+        //console.log(categoriasArray);
     }
 
     return (

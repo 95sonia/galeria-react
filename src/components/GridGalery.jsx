@@ -15,6 +15,7 @@ export const GridGalery = ({ categoria }) => {
   const page = 1;
   // "Requerir" lo que nos interesa del Hook
   const { cargando, fotos } = usellamarApiFecth(categoria, per_page, page);
+  //console.log(fotos);
 
   return (
 
