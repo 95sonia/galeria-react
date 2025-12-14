@@ -1,5 +1,6 @@
 import './Galeria.css'
 import { useState } from 'react';
+<<<<<<< HEAD
 import { Formulario } from './Formulario';
 import { GridGalery } from './GridGalery';
 
@@ -7,6 +8,11 @@ import { GridGalery } from './GridGalery';
  * Componente Galeria
  * @returns Galeria
  */
+=======
+import { Formulario } from './Formulario'
+import { GridGalery } from './GridGalery'
+
+>>>>>>> paginacion
 export const Galeria = () => {
 
     //const categoriasPruebas = ['naturaleza', 'animales', 'casa'];

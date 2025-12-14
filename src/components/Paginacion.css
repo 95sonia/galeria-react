@@ -1,0 +1,46 @@
+
+.contenedorPagiancion {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    gap: 5px; /* Espacio entre botones */
+    padding: 20px 10px;
+    margin: 20px 0;
+}
+
+.btnpaginas {
+    border: 1px solid black;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 3px 0; /* Espacio vertical Mobile First */
+}
+
+.btnpaginas:hover {
+    background-color: rgb(255, 176, 119);
+}
+
+.numeroPagina {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 15px;
+}
+
+/* ======================================================= 
+                       MEDIA QUERIES
+======================================================= */
+
+@media (min-width: 768px) {
+    .contenedorPagiancion {
+        gap: 9px; /* Aumentar espacio pantalla grande */
+        padding: 20px 0;
+    }
+    
+    .btnpaginas {
+        padding: 10px 16px; /* Botones más grandes */
+        font-size: 1rem;
+        margin: 0; /* Eliminar margen vertical */
+    }
+}

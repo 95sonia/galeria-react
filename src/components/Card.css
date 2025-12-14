@@ -1,7 +1,6 @@
 /*ESTILOS LOCALES PARA LAS CARDS*/
 
 .card {
-border: 1px solid black;
-border-radius: 20px;
-
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
 }
