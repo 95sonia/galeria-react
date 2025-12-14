@@ -1,8 +1,12 @@
+import './Galeria.css'
 import { useState } from 'react';
 import { Formulario } from './Formulario';
 import { GridGalery } from './GridGalery';
 
-
+/**
+ * Componente Galeria
+ * @returns Galeria
+ */
 export const Galeria = () => {
 
     //const categoriasPruebas = ['naturaleza', 'animales', 'casa'];
@@ -49,3 +53,4 @@ export const Galeria = () => {
         </>
     )
 }
+

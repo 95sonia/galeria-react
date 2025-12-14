@@ -1,8 +1,12 @@
 // utilzar el hook useEffect
 import { createClient } from "pexels";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 const API_KEY = import.meta.env.VITE_API_KEY;
-
+/**
+ * Función fecth que conecta con la api de pexels
+ * @param {String} categoria capturada en el formulario
+ * @returns fotos y cargando
+ */
 export const useLlamarApi = (categoria) => {
 
     // hay que almacenar las fotos

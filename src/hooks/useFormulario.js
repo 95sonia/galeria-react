@@ -1,3 +1,8 @@
+/**
+ * Función que recoge el input del formulario
+ * @param {String} categoriaNueva añadir categoria al array de categorias
+ * @returns 
+ */
 export const useFormulario = (categoriaNueva) => {
 
     // Recoge el valor del input buscado

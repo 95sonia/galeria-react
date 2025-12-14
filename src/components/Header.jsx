@@ -1,5 +1,9 @@
+import './Header.css'
 import logoPexels from '../assets/pexels-logo.svg'
-
+/**
+ * Componente header
+ * @returns Header
+ */
 export const Header = () => {
     return (
         <>

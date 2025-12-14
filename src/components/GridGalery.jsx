@@ -1,11 +1,15 @@
 import './GridGalery.css'
-import React, { useState, useEffect } from 'react';
 import { Card } from './Card';
 import { Paginacion } from './Paginacion';
 import { useLlamarApi } from '../hooks/useLlamarApi';
 import { usellamarApiFecth } from '../hooks/useFetch'
+import PropTypes from 'prop-types';
 
-
+/**
+ * Componente GridGallery
+ * @param {String} categoria buscada a través de formulario
+ * @returns grid gallery
+ */
 export const GridGalery = ({ categoria }) => {
 
   // "Requerir" lo que nos interesa del Hook
@@ -44,3 +48,7 @@ export const GridGalery = ({ categoria }) => {
     </>
   )
 }
+
+GridGalery.defaultProps = {
+  categoria: PropTypes.string
+};

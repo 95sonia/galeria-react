@@ -2,7 +2,13 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const URL_BASE = `https://api.pexels.com/v1/`;
 import { useState, useEffect } from 'react';
 
-
+/**
+ * Función que conecta con Pexels a través de createClient
+ * @param {query} categoria 
+ * @param {query} per_page 
+ * @param {query} page 
+ * @returns fotos y cargando
+ */
 export const usellamarApiFecth = (categoria, per_page, page) => {
     // hay que almacenar las fotos
     const [fotos, setFotos] = useState([]);

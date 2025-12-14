@@ -1,5 +1,12 @@
+import './Formulario.css'
+import PropTypes from 'prop-types';
 import { useFormulario } from '../hooks/useFormulario'
 // único objetivo del formulario: capturar el valor del input, la categoría
+/**
+ * Componente Formulario
+ * @param {*} categoriaNueva categorias nuevas a través de formulario  
+ * @returns Formulario
+ */
 export const Formulario = ({ categoriaNueva }) => {
     // No hace falta añadir los estados ya que se lo pasamos directamente a la Galería por categoriaNueva(categoria)
     //const [categoria, setCategoria] = useState('');
@@ -17,3 +24,7 @@ export const Formulario = ({ categoriaNueva }) => {
 
     )
 }
+
+Formulario.defaultProps = {
+  categoriaNueva: PropTypes.string
+};
