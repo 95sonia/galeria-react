@@ -3,12 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { Card } from './Card';
 import { Paginacion } from './Paginacion';
 import { useLlamarApi } from '../hooks/useLlamarApi';
+import { usellamarApiFecth } from '../hooks/useFetch'
 
 
 export const GridGalery = ({ categoria }) => {
 
   // "Requerir" lo que nos interesa del Hook
-  const { cargando, fotos } = useLlamarApi(categoria);
+  //const { cargando, fotos } = useLlamarApi(categoria);
+
+  const per_page = 10;
+  const page = 1;
+  // "Requerir" lo que nos interesa del Hook
+  const { cargando, fotos } = usellamarApiFecth(categoria, per_page, page);
 
   return (
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Formulario } from './Formulario'
-import { GridGalery } from './GridGalery'
+import { Formulario } from './Formulario';
+import { GridGalery } from './GridGalery';
 
 
 export const Galeria = () => {
