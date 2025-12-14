@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Formulario } from './Formulario'
 import { GridGalery } from './GridGalery'
 
-
 export const Galeria = () => {
 
     //const categoriasPruebas = ['naturaleza', 'animales', 'casa'];
